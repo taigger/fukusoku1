@@ -1,0 +1,49 @@
+.chat-container {
+  width: 100%;
+  height: 100%;
+}
+
+.chat-card {
+  height: 67vh;
+  overflow: auto;
+}
+
+.chat-area {
+  width: 70%;
+}
+
+.comment-container {
+  position: fixed;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.comment-area {
+  width: 70%;
+}
+
+.comment-btn {
+  margin: 0px 10px;
+}
+
+.comment-body {
+  padding: 5px 30px 20px 30px;
+}
+
+.comment-body:hover {
+  background-color: #dfdfdf;
+}
+
+.comment-body-user {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.comment-body-time {
+  font-size: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  color: #a0a0a0;
+}
+/*# sourceMappingURL=view.css.map */
