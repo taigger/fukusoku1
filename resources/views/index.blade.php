@@ -123,8 +123,8 @@
                     <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/img/bg-masthead.jpg" alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>従業員の副業のリスクを軽減</h4>
-                            <p class="text-black-50 mb-0">従業員の副業の見える化によって、本業へのリスクを軽減</p>
+                            <h4>従業員の副業リスクを軽減</h4>
+                            <p class="text-black-50 mb-0">従業員の副業を見える化し、本業へのリスクを軽減</p>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
                                     <h4 class="text-white">副業の事前承認機能</h4>
-                                    <p class="mb-0 text-white-50">A〜Cまででリスクを判定。業務時間や業務内容に基づいた承認棄却が可能</p>
+                                    <p class="mb-0 text-white-50">業務時間や業務内容に基づいて副業リスクを判定。承認棄却が可能</p>
                                     <hr class="d-none d-lg-block mb-0 ms-0" />
                                 </div>
                             </div>
