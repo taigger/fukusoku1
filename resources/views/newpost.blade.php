@@ -17,7 +17,7 @@
                 <label for="exampleFormControlInput1">副業先会社名</label>
                             <select class="form-control" name="fukugyo_company" maxlength="30">
                                 @foreach($fukugyousakis as $fukugyousaki)
-                                <option value="{{$fukugyousaki->fukugyousaki}}">{{$fukugyousaki->fukugyousaki}}</option>
+                                <option value="{{$fukugyousaki->fukugyousaki}}">{{$fukugyousaki->fukugyousaki}}({{$fukugyousaki->gyousyu}})</option>
                                 @endforeach
                             </select>
               </div>

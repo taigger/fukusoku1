@@ -49,7 +49,7 @@
                                             <th>業種</th>
                                             <th>業務内容</th>
                                             <th>時期</th>
-                                            <th>労働時間(月間h)</th>
+                                            <th>労働時間(月間)</th>
                                             <th>アラート</th>
                                             <th>ステータス</th>
                                              <th>承認/差戻し</th>
@@ -71,14 +71,14 @@
                                             <td>{{$post->fukugyo_time}}</td>
                                          
                                             <td>{{$post->judge}}</td>
-                                            <td>{{$post->status}}</td>
+                                            <td style="color:black;">{{$post->status}}</td>
                                             <td>
                                                 <select class="form-select" name='status'>
                                                     <option value="承認済">承認</option>
                                                     <option value="差戻し">差戻し</option>
                                                 </select>
                                             </td>
-                                            <td><textarea></textarea></td>
+                                            <td><textarea name='comment'>{{$post->comment}}</textarea></td>
                                             <td>
                                           
                                              <button type="submit" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">送信</button>

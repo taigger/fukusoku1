@@ -28,6 +28,7 @@
                                             <th>時期</th>
                                             <th>労働時間(月間)</th>
                                             <th>承認状況</th>
+                                            <th>コメント</th>
                                              <th>削除</th>
                                         </tr>
                                     </thead>
@@ -55,6 +56,7 @@
                                             <td>{{$post->subbmit_month}}</td>
                                             <td>{{$post->fukugyo_time}}</td>
                                             <td>{{$post->status}}</td>
+                                            <td>{{$post->comment}}</td>
                                             <td><button type="url" class="btn btn-danger active" data-bs-toggle="button" autocomplete="off" aria-pressed="true"><a href="destroy/{{$post->id}}" class="text-decoration-none text-white">削除</a></button></td>
                                         </tr>
                                         @endforeach

@@ -34,6 +34,7 @@ class ChartController extends Controller
         $authority = Auth::user()->auhority;
         
         
+        
         if($authority === 3){
             $user_id = Auth::user()->id;
             $posts = Post::where('user_id',$user_id)->get();
@@ -49,34 +50,35 @@ class ChartController extends Controller
             
         $month = $post->subbmit_month;
         $fukugyotime =  $post->fukugyo_time;
+        $status = $post->status;
         
-          if($month === '2021-01'){
-            $january += $fukugyotime;
-        }elseif($month ==='2021-02'){
-            $february += $fukugyotime;
-        }elseif($month === '2021-03'){
-            $march += $fukugyotime;
-        }elseif($month ==='2021-04'){
-            $april += $fukugyotime;
-        }elseif($month ==='2021-05'){
-            $may += $fukugyotime;
-        }elseif($month ==='2021-06'){
-            $june += $fukugyotime;
-        }elseif($month ==='2021-07'){
-            $july += $fukugyotime;
-        }elseif($month ==='2021-08'){
-            $august += $fukugyotime;
-        }elseif($month ==='2021-09'){
-            $september += $fukugyotime;
-        }elseif($month ==='2021-10'){
-            $october += $fukugyotime;
-        }elseif($month ==='2021-11'){
-            $nobember += $fukugyotime;
-        }elseif($month ==='2021-12'){
-            $december += $fukugyotime;
+        if($status === '承認済'){
+            if($month === '2021-01'){
+                $january += $fukugyotime;
+            }elseif($month ==='2021-02'){
+                $february += $fukugyotime;
+            }elseif($month === '2021-03'){
+                $march += $fukugyotime;
+            }elseif($month ==='2021-04'){
+                $april += $fukugyotime;
+            }elseif($month ==='2021-05'){
+                $may += $fukugyotime;
+            }elseif($month ==='2021-06'){
+                $june += $fukugyotime;
+            }elseif($month ==='2021-07'){
+                $july += $fukugyotime;
+            }elseif($month ==='2021-08'){
+                $august += $fukugyotime;
+            }elseif($month ==='2021-09'){
+                $september += $fukugyotime;
+            }elseif($month ==='2021-10'){
+                $october += $fukugyotime;
+            }elseif($month ==='2021-11'){
+                $nobember += $fukugyotime;
+            }elseif($month ==='2021-12'){
+                $december += $fukugyotime;
+            }
         }
-        
-        
         }
     
      return view('chart',['january'=>$january,'february'=> $february,'march'=> $march, 'april'=> $april,'may'=> $may,'june'=>$june,'july'=>$july,'august'=>$august,'september'=>$september,'october'=>$october,'nobember'=>$nobember,'december'=>$december]);
@@ -107,7 +109,10 @@ class ChartController extends Controller
             
         $month = $post->subbmit_month;
         $fukugyotime =  $post->fukugyo_time;
+        $status = $post->status;
         
+          if($status === '承認済'){
+              
           if($month === '2022-01'){
             $january += $fukugyotime;
         }elseif($month ==='2022-02'){
@@ -134,6 +139,7 @@ class ChartController extends Controller
             $december += $fukugyotime;
         }
         
+        }
         
         }
     

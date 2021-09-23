@@ -28,6 +28,8 @@ class CreatePostsTable extends Migration
              $table->string('subbmit_month')->default('未設定');
             //承認の有無のこと
             $table->string('status')->default('未承認');
+            // コメントのこと
+            $table->string('comment')->default('なし');
              
             $table->string('judge')->default('承認待');;
             $table->timestamps();

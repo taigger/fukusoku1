@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 
 <head>
 
@@ -9,9 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>FUKUSOKU</title>
 
     <!-- Custom fonts for this template -->
+    <link  href="public/favicon.ico" rel=”icon”>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -32,15 +33,26 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            @if(Auth::user()->authority != 3)
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/tables">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">FUKUSOKU</div>
             </a>
+            @endif
+            
+            @if(Auth::user()->authority === 3)
+             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/usertables">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">FUKUSOKU</div>
+            </a>
+            @endif
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -69,12 +81,14 @@
             <!--</li>-->
             <!-- @endif-->
             
+               @if(Auth::user()->authority != 3)
              <li class="nav-item active">
                 <a class="nav-link">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>管理</span></a>
             </li>
-            
+              @endif
+              
              @if(Auth::user()->authority == 1)
             <li class="nav-item">
                 <a class="nav-link" href="/companyall">
@@ -259,7 +273,7 @@
                     <span>実績</span></a>
             </li>
             
-            <li class="nav-item">
+            <li class="nav-item mt-3">
                 <div>
                     <a class="nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
@@ -301,18 +315,19 @@
                     </form>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <!--検索エンジン-->
+                    <!--<form-->
+                    <!--    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">-->
+                    <!--    <div class="input-group">-->
+                    <!--        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."-->
+                    <!--            aria-label="Search" aria-describedby="basic-addon2">-->
+                    <!--        <div class="input-group-append">-->
+                    <!--            <button class="btn btn-primary" type="button">-->
+                    <!--                <i class="fas fa-search fa-sm"></i>-->
+                    <!--            </button>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</form>-->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -461,7 +476,20 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
-                        
+                         <li class="nav-item">
+                            <div>
+                                <a style="color:black;" class="nav-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                         <div class="topbar-divider d-none d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="/accountsetting"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -509,7 +537,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Fukusoku 2021</span>
                     </div>
                 </div>
             </footer>

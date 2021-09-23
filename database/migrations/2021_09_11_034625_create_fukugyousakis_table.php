@@ -17,6 +17,7 @@ class CreateFukugyousakisTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->nullable();
             $table->string('fukugyousaki')->nullable();
+            $table->string('gyousyu')->nullable();
             $table->timestamps();
         });
         //

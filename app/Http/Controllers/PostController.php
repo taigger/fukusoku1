@@ -129,6 +129,7 @@ class PostController extends Controller
         // ]);
         $post = Post::find ($id);
         $post->status = $request ->status;
+        $post->comment = $request ->comment;
         $post->update();
         return redirect('/tables');
     }
