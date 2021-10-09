@@ -9,6 +9,9 @@
         "prod": "npm run production",
         "heroku-postbuild": "npm run prod",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+         "postinstall": "gulp browserify",
+         "start": "node server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
