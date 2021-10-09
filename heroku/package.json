@@ -3,7 +3,7 @@
   "description": "CLI to interact with Heroku",
   "version": "7.59.0",
   "engines": {
-    "node": "12.21.0"
+    "node": "14.x"
   },
   "author": "Jeff Dickey @jdxcode",
   "bin": {
