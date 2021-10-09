@@ -63,7 +63,10 @@ class PostController extends Controller
        
         $post = new Post;
         $post ->fukugyo_company = $request->fukugyo_company;
-        $post ->fukugyo_industry = $request->fukugyo_industry;
+        $fukugyo_company = $request->fukugyo_company;
+        $fukugyousaki = Fukugyousaki::where('fukugyousaki',$fukugyo_company)->first();
+        $post ->fukugyo_industry = $fukugyousaki->gyousyu;
+        // $post ->fukugyo_industry = $request->fukugyo_industry;
         $post ->fukugyo_naiyou = $request->fukugyo_naiyou;
          $post ->subbmit_month = $request->subbmit_month;
          $post ->fukugyo_time = $request->fukugyo_time;

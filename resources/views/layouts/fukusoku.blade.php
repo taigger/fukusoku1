@@ -273,27 +273,27 @@
                     <span>実績</span></a>
             </li>
             
-            <li class="nav-item mt-3">
-                <div>
-                    <a class="nav-link" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+            <!--<li class="nav-item mt-3">-->
+            <!--    <div>-->
+            <!--        <a class="nav-link" href="{{ route('logout') }}"-->
+            <!--           onclick="event.preventDefault();-->
+            <!--                         document.getElementById('logout-form').submit();">-->
+            <!--            {{ __('Logout') }}-->
+            <!--        </a>-->
     
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
+            <!--        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">-->
+            <!--            @csrf-->
+            <!--        </form>-->
+            <!--    </div>-->
+            <!--</li>-->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            <!--<div class="text-center d-none d-md-inline">-->
+            <!--    <button class="rounded-circle border-0" id="sidebarToggle"></button>-->
+            <!--</div>-->
 
         </ul>
         <!-- End of Sidebar -->
@@ -481,7 +481,7 @@
                                 <a style="color:black;" class="nav-link" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('ログアウト') }}
                                 </a>
                 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -490,7 +490,7 @@
                             </div>
                         </li>
                          <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="nav-item dropdown no-arrow" style="color:black">
                             <a class="nav-link dropdown-toggle" href="/accountsetting"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->company }}</span>

@@ -22,7 +22,9 @@
                                         <tr>
                                             <th>ユーザー名</th>
                                             <th>所属</th>
+                                             <th>権限</th>
                                             <th>メールアドレス</th>
+                                            <th>編集</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -31,8 +33,13 @@
                                             <td>{{$user->name}}</td>
                                             <!--リレーション先のユーザーの名前をこれで表示可能です-->
                                             <td>{{$user->organization}}</td>
+                                            @if($user->authority == 3)
+                                            <td>ユーザー</td>
+                                            @else($user->authority != 3)
+                                            <td>管理者</td>
+                                            @endif
                                             <td>{{$user->email}}</td>
-                                            </td>
+                                            <td><button type="submit" class="btn btn-primary active" onclick="userEdit()">編集</button></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

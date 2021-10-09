@@ -26,7 +26,21 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    // ログイン機能の実装
+    public function redirectTo(){
+    $authority = $this->guard()->user()->authority;
+    if($authority === 1){
+      return '/companyall';
+    }
+    if($authority === 2){
+      return '/tables';
+    }
+    if($authority === 3){
+      return '/usertables';
+    }
+    return '/usertables';
+}
 
     /**
      * Create a new controller instance.

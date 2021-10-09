@@ -17,6 +17,7 @@ class FukugyousakiController extends Controller
       $fukugyousaki = new Fukugyousaki;
       $fukugyousaki -> user_id = Auth::id();
       $fukugyousaki -> fukugyousaki = $request->fukugyousaki;
+      $fukugyousaki -> gyousyu = $request->gyousyu;
     //   $fukugyousaki -> gyousyu= $request->gyousyu;
       $fukugyousaki -> save();
        return redirect('/fukugyousakis');
