@@ -41,6 +41,6 @@ class ArartController extends Controller
     {
     $arart = Arart::findOrFail($id);
     $arart->delete();       //追加
-    return redirect('arart');  //追加
+    return redirect('showarart');  //追加
     }
 }

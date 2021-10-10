@@ -3,9 +3,6 @@
   "description": "CLI to interact with Heroku",
   "version": "7.59.0",
   "author": "Jeff Dickey @jdxcode",
-  "engines": {
-    "node": "10.24.1"
-  },
   "bin": {
     "heroku": "./bin/run"
   },
@@ -88,6 +85,9 @@
     "sinon": "^7.2.4",
     "ts-node": "^8.0.2",
     "typescript": "3.7.5"
+  },
+  "engines": {
+    "node": ">=8.3.0"
   },
   "files": [
     "/oclif.manifest.json",
