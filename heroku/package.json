@@ -3,6 +3,9 @@
   "description": "CLI to interact with Heroku",
   "version": "7.59.0",
   "author": "Jeff Dickey @jdxcode",
+  "engines": {
+    "node": "10.24.1"
+  },
   "bin": {
     "heroku": "./bin/run"
   },
