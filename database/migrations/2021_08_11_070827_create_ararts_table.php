@@ -15,7 +15,7 @@ class CreateArartsTable extends Migration
     {
         Schema::create('ararts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('company_id')->default(1);
+            $table->string('companyname')->nullable();
             $table->integer('ng_time')->default(0);
             $table->string('ng_industry')->default('未設定');
             $table->timestamps();
