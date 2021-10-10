@@ -73,18 +73,19 @@ class PostController extends Controller
          $post ->status = '承認待';
         $post ->user_id = Auth::id();
         
+        $companyname = Auth::user()->company;
         
-        $ararts = Arart::get();
+        $ararts = Arart::where('companyname',$companyname)->get();;
         
         foreach($ararts as $arart){
             
-            if($arart->ng_industry === $request->fukugyo_industry && $arart->ng_time < $request->fukugyo_time){
+            if($arart->ng_industry == $request->fukugyo_industry && $arart->ng_time < $request->fukugyo_time){
                  $post->judge = 'C';
                  break;
             }elseif($arart->ng_time *2 < $request->fukugyo_time){
                 $post->judge = 'C';
                 break;
-            }elseif($arart->ng_industry === $request->fukugyo_industry){
+            }elseif($arart->ng_industry == $request->fukugyo_industry){
                 $post->judge = 'B';
                 break;
             }elseif($arart->ng_time < $request->fukugyo_time){

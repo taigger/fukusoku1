@@ -40,7 +40,7 @@
                                         <tr>
                                             <td>{{$organization->organization}}</td>
                                             <!--リレーション先のユーザーの名前をこれで表示可能です-->
-                                            <td></td>
+                                            <td>1</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

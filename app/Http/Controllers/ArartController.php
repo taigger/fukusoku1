@@ -25,6 +25,7 @@ class ArartController extends Controller
         //  $arart->ng_company = $request->ng_time;
         $arart->ng_time = $request->ng_time;
         $arart->ng_industry = $request->ng_industry;
+        $arart->companyname = Auth::user()->company;
         $arart->save();
         
         $default_time =  $request->ng_time;
