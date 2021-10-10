@@ -64,7 +64,7 @@ Route::get('/showarart','ArartController@newarart');
 Route::post('/arart','ArartController@store');
 
 // アラート削除
-Route::post('/arartdestroy/{id}','ArartController@destroy');
+Route::get('/arartdestroy/{id}','ArartController@destroy');
 
 // 承認
 Route::post('/approve/{id}','PostController@approve');
