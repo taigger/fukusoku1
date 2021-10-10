@@ -29,6 +29,6 @@ class CreateArartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('arartSettings');
+        Schema::dropIfExists('ararts');
     }
 }
